@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <grid>
+    <row>
+      <button text="Restart" onTap="restart" color="red" />
+      <button text="Shutdown" onTap="shutdown" color="red" />
+    </row>
+    <row>
+      <button text="Log Off" onTap="logoff" />
+      <button text="Sleep" onTap="sleep" />
+    </row>
+    <row>
+      <button text="Hibernate" onTap="hibernate" />
+      <button text="Wake On Lan" onTap="@wol" />
+    </row>
+    <row>
+      <button text="Restart Gnome Shell" onTap="restart_gnome_shell" />
+      <button text="24P" onTap="film" />
+      <button text="60P" onTap="ntsc" />
+    </row>
+  </grid>
+</layout>
