@@ -70,7 +70,7 @@ end
 actions.film = function ()
          script.shell(
            "#!/bin/bash",
-           "export DISPLAY=:0",
+           "export $(cat /proc/$(pidof gnome-shell)/environ | tr '\0' '\n' | grep '^DISPLAY=')",
            "xrandr --output HDMI-0 --mode 1920x1080 --rate 23.97"
          );
 end
@@ -79,7 +79,7 @@ end
 actions.ntsc = function ()
          script.shell(
            "#!/bin/bash",
-           "export DISPLAY=:0",
+           "export $(cat /proc/$(pidof gnome-shell)/environ | tr '\0' '\n' | grep '^DISPLAY=')",
            "xrandr --output HDMI-0 --mode 1920x1080 --rate 59.94"
          );
 end
