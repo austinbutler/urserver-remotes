@@ -9,7 +9,7 @@ actions.open_netflix = function ()
         "then",
             ":",
         "else",
-            "export DISPLAY=:0",
+            "export $(cat /proc/$(pidof gnome-shell)/environ | tr '\0' '\n' | grep '^DISPLAY=')",
             "nohup /opt/google/chrome/google-chrome --kiosk 'https://www.netflix.com/SwitchProfile?tkn=6AOIYFY5QZHNHLDALVVVE4E7FU' >&/dev/null &",
         "fi"
         );
